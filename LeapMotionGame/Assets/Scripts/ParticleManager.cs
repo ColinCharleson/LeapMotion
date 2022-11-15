@@ -9,9 +9,16 @@ public class ParticleManager : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Bag")
 		{
-			Instantiate(punchParticle, this.transform.position, Quaternion.identity);
+			GameObject punch = Instantiate(punchParticle, this.transform.position, Quaternion.identity);
 			Debug.Log("hit");
+			StartCoroutine(DestroyParticle(punch));
 		}
+	}
+
+	IEnumerator DestroyParticle(GameObject punch)
+	{
+		yield return new WaitForSeconds(1);
+		Destroy(punch);
 	}
 
 }
