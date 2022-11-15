@@ -5,11 +5,12 @@ using UnityEngine;
 public class ParticleManager : MonoBehaviour
 {
 	public GameObject punchParticle;
-	private void OnCollisionEnter(Collision collision)
+	private void OnTriggerEnter(Collision collision)
 	{
 		if(collision.gameObject.tag == "Bag")
 		{
 			Instantiate(punchParticle, this.transform.position, Quaternion.identity);
+			Debug.Log("hit");
 		}
 	}
 }
