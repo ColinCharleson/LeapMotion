@@ -5,7 +5,7 @@ using UnityEngine;
 public class ParticleManager : MonoBehaviour
 {
 	public GameObject punchParticle;
-	private void OnTriggerEnter(Collision collision)
+	private void OnCollisionEnter(Collision collision)
 	{
 		if(collision.gameObject.tag == "Bag")
 		{
@@ -13,4 +13,5 @@ public class ParticleManager : MonoBehaviour
 			Debug.Log("hit");
 		}
 	}
+
 }
