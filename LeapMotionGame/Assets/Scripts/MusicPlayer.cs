@@ -23,8 +23,6 @@ public class MusicPlayer : MonoBehaviour
 
         BackgroundMusic.volume = musicVolume;
 
-
     }
-
 
 }
